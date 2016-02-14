@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-void main() {
+int main() {
     std::cout << "Please enter a number...";
     double x;
 	double y=774382;
