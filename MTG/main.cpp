@@ -10,13 +10,16 @@
 #include "turn.h"
 
 int main() {
-    std::cout << "Please enter a number...";
-    double x;
-	double y=774382;
-    std::cin >> x;
-    for (int i = 0; i!=x; i++) {
-        std::cout << i << ": Hello\n";
-		y *= i;
-		std::cout << y;
-    }
+        
+    Turn player1;
+    player1.addCardDeck("Firey pits of hell");
+    player1.addCardDeck("Gates of Hades");
+    player1.addCardDeck("The one");
+    player1.addCardDeck("Destruction");
+    player1.drawCard();
+    player1.drawCard();
+    player1.drawCard();
+    player1.drawCard();
+    player1.displayHand();
+    
 }
