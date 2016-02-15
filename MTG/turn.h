@@ -20,6 +20,13 @@ public:
     //Stuff needed for super: deck, hand, field, mana, life, poison ctr, token, exile, cmd slot
     
     std::list<std::string> deck;
+    std::list<std::string> hand;
+    std::list<std::string> field;
+    std::list<int> mana;
+    int life;
+    int psn;
+    std::list<std::string> exile;
+    std::list<std::string> cmdS;
     
 };
 
