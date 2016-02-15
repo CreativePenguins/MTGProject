@@ -19,6 +19,7 @@ public:
     
     //Stuff needed for super: deck, hand, field, mana, life, poison ctr, token, exile, cmd slot
     
+    //Attributes TODO add tokens --> maybe just add it to the cards on the field (bool?)
     std::list<std::string> deck;
     std::list<std::string> hand;
     std::list<std::string> field;
@@ -27,6 +28,9 @@ public:
     int psn;
     std::list<std::string> exile;
     std::list<std::string> cmdS;
+    std::list<std::string> counter;
+    
+    //Accessors and Mutators
     
 };
 
