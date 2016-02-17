@@ -8,18 +8,18 @@
 
 #include <iostream>
 #include "turn.h"
+#include <string>
 
 int main() {
         
     Turn player1;
-    player1.addCardDeck("Firey pits of hell");
-    player1.addCardDeck("Gates of Hades");
-    player1.addCardDeck("The one");
-    player1.addCardDeck("Destruction");
-    player1.drawCard();
-    player1.drawCard();
-    player1.drawCard();
-    player1.drawCard();
+    for (int i = 0; i<60; i++) {
+        player1.addCardDeck(std::to_string(i));
+    }
+    player1.shuffleDeck();
+    for (int i = 0; i<60; i++) {
+        player1.drawCard();
+    }
     player1.displayHand();
     
 }
