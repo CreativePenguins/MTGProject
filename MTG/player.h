@@ -25,14 +25,15 @@ private:
     std::vector<std::string> deck; // Was going to change it to stack, but leave it as list so we can pull other stuff.
     std::vector<std::string> hand;
     std::vector<std::string> field;
-    std::vector<int> mana;
-    int life;
-    int psn;
-	//int grbg;					   // Leave this for me
     std::vector<std::string> exile;
     std::vector<std::string> cmdS;
     std::vector<std::string> counter;
-    std::string name;
+	std::vector<int> mana;
+
+	int life = 20;
+	int psn = 0;
+
+	std::string name;
     
 public:   
     // Accessors and Mutators
@@ -61,8 +62,8 @@ public:
         
     }
     void shuffleDeck() {
-        auto engine = std::default_random_engine{};
-        std::shuffle(deck.begin(), deck.end(), engine);
+        auto engine = std::default_random_engine{};			// Needs seed.
+        std::shuffle(deck.begin(), deck.end(), engine);		//possible memory leak.
     }
     
     // Hand stuff
@@ -71,11 +72,9 @@ public:
             std::cout << name << "'s hand contains the following:\n";
             for (std::vector<std::string>::iterator it=hand.begin(); it != hand.end(); it++)
                 std::cout << *it << "\n";
-			    //std::cin >> grbg;	// Leave this here for me
         }
         else if (hand.empty())
             std::cout << "Your hand is empty...\n";
-        
     }
     
 };
