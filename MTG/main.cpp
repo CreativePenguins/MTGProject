@@ -7,24 +7,23 @@
 //
 
 #include <iostream>
-#include "player.h"
-#include <string>
+#include "player.cpp"
 
 int main() {
         
-    Player tyler("Tyler");
+    Player tyler("Tyler");                    // Creates the player named Tyler
     for (int i = 0; i<60; i++) {
-        tyler.addCardDeck(std::to_string(i));
+        tyler.addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
     }
     tyler.shuffleDeck();
     for (int i = 0; i<60; i++) {
-        tyler.drawCard();
+        tyler.drawCard();                     // Draws the 60 cards from deck to hand.
     }
-    tyler.displayHand();
+    tyler.displayHand();                      // Displays the hand of the player.
     
     Player jay("Jay");
     for (int i = 0; i<60; i++) {
-        jay.addCardDeck(std::to_string(i));
+        jay.addCardDeck(std::to_string(i));   // See notes above.
     }
     jay.shuffleDeck();
     for (int i = 0; i<60; i++) {
