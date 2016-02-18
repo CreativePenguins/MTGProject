@@ -17,7 +17,7 @@
 #include <random>
 
 class Turn {
-public:
+private:
     
     // Stuff needed for super: deck, hand, field, mana, life, poison ctr, token, exile, cmd slot
     
@@ -28,11 +28,12 @@ public:
     std::vector<int> mana;
     int life;
     int psn;
+	int grbg;					   // Leave this for me
     std::vector<std::string> exile;
     std::vector<std::string> cmdS;
     std::vector<std::string> counter;
     
-    
+public:   
     // Accessors and Mutators
     
     // Library(deck) stuff
@@ -46,6 +47,7 @@ public:
         }
         else {
             std::cout << "Your deck is empty...\n";
+			
         }
         
     }
@@ -60,6 +62,7 @@ public:
             std::cout << "Your hand contains the following:\n";
             for (std::vector<std::string>::iterator it=hand.begin(); it != hand.end(); it++)
                 std::cout << *it << "\n";
+			    std::cin >> grbg;	// Leave this here for me
         }
         else if (hand.empty())
             std::cout << "Your hand is empty...\n";
