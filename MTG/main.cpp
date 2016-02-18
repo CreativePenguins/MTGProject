@@ -7,19 +7,29 @@
 //
 
 #include <iostream>
-#include "turn.h"
+#include "player.h"
 #include <string>
 
 int main() {
         
-    Turn player1;
+    Player tyler("Tyler");
     for (int i = 0; i<60; i++) {
-        player1.addCardDeck(std::to_string(i));
+        tyler.addCardDeck(std::to_string(i));
     }
-    player1.shuffleDeck();
+    tyler.shuffleDeck();
     for (int i = 0; i<60; i++) {
-        player1.drawCard();
+        tyler.drawCard();
     }
-    player1.displayHand();
+    tyler.displayHand();
+    
+    Player jay("Jay");
+    for (int i = 0; i<60; i++) {
+        jay.addCardDeck(std::to_string(i));
+    }
+    jay.shuffleDeck();
+    for (int i = 0; i<60; i++) {
+        jay.drawCard();
+    }
+    jay.displayHand();
     
 }

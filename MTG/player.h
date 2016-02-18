@@ -1,13 +1,13 @@
 //
-//  turn.h
+//  player.h
 //  MTG
 //
 //  Created by Tyler Pearson on 2/14/16.
 //  Copyright © 2016 JandT. All rights reserved.
 //
 
-#ifndef turn_h
-#define turn_h
+#ifndef player_h
+#define player_h
 
 #include <iostream>
 #include <string>
@@ -16,7 +16,7 @@
 #include <algorithm>
 #include <random>
 
-class Turn {
+class Player {
 private:
     
     // Stuff needed for super: deck, hand, field, mana, life, poison ctr, token, exile, cmd slot
@@ -28,13 +28,22 @@ private:
     std::vector<int> mana;
     int life;
     int psn;
-	int grbg;					   // Leave this for me
+	//int grbg;					   // Leave this for me
     std::vector<std::string> exile;
     std::vector<std::string> cmdS;
     std::vector<std::string> counter;
+    std::string name;
     
 public:   
     // Accessors and Mutators
+    
+    // Constuctor
+    Player() {
+        name = "Player";
+    }
+    Player(std::string n) {
+        name = n;
+    }
     
     // Library(deck) stuff
     void addCardDeck(std::string card) { // This will add cards the back of the deck
@@ -59,10 +68,10 @@ public:
     // Hand stuff
     void displayHand() {
         if (!hand.empty()){
-            std::cout << "Your hand contains the following:\n";
+            std::cout << name << "'s hand contains the following:\n";
             for (std::vector<std::string>::iterator it=hand.begin(); it != hand.end(); it++)
                 std::cout << *it << "\n";
-			    std::cin >> grbg;	// Leave this here for me
+			    //std::cin >> grbg;	// Leave this here for me
         }
         else if (hand.empty())
             std::cout << "Your hand is empty...\n";
@@ -72,4 +81,4 @@ public:
 };
 
 
-#endif /* turn_h */
+#endif /* player_h */
