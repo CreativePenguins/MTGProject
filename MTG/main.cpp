@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "player.cpp"
+#include "player.h"
 
 int main() {
         
