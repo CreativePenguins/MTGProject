@@ -7,7 +7,6 @@
 //
 
 #include "player.h"
-
 #include <iostream>
 #include <string>
 #include <list>

@@ -8,10 +8,48 @@
 
 #include <iostream>
 #include "player.h"
+#include <string>
+
 
 int main() {
-        
-    Player tyler("Tyler");                    // Creates the player named Tyler
+
+	int plCt;
+	std::string name;
+
+	std::cout << "How many players do you have? ";
+	std::cin >> plCt;
+	while (plCt > 4) {
+		std::cout << "You have too many players,\nplease enter a value less than 6... ";
+		std::cin >> plCt;
+	}
+
+	if (plCt >= 1) {
+		std::cout << "Please enter a name for player 1: ";
+		std::cin >> name;
+		Player player1(name);
+		if (plCt >= 2) {
+			std::cout << "Please enter a name for player 2: ";
+			std::cin >> name;
+			Player player2(name);
+			if (plCt >= 3) {
+				std::cout << "Please enter a name for player 3: ";
+				std::cin >> name;
+				Player player3(name);
+				if (plCt == 4) {
+					std::cout << "Please enter a name for player 4: ";
+					std::cin >> name;
+					Player player4(name);
+
+				}
+			}
+		}
+	}
+	
+	for (int i = 0; i < 60; i++) {
+		
+	}
+
+/*    Player tyler("Tyler");                    // Creates the player named Tyler
     for (int i = 0; i<60; i++) {
         tyler.addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
     }
@@ -30,5 +68,5 @@ int main() {
         jay.drawCard();
     }
     jay.displayHand();
-    
+*/    
 }
