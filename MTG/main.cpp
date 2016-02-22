@@ -5,48 +5,52 @@
 //  Created by Tyler Pearson & Julien Vachon on 2/12/16.
 //  Copyright © 2016 JandT. All rights reserved.
 //
-
-#include <iostream>
 #include "player.h"
+#include <iostream>
+#include <vector>
 #include <string>
 
 
 int main() {
 
-	int plCt;
-	std::string name;
+    int plCt;
+	std::vector<Player> name;
 
 	std::cout << "How many players do you have? ";
 	std::cin >> plCt;
-	while (plCt > 4) {
+	
+	while (plCt > 4) 
+	{
 		std::cout << "You have too many players,\nplease enter a value less than 6... ";
 		std::cin >> plCt;
 	}
-
-	if (plCt >= 1) {
-		std::cout << "Please enter a name for player 1: ";
-		std::cin >> name;
-		Player player1(name);
-		if (plCt >= 2) {
-			std::cout << "Please enter a name for player 2: ";
-			std::cin >> name;
-			Player player2(name);
-			if (plCt >= 3) {
-				std::cout << "Please enter a name for player 3: ";
-				std::cin >> name;
-				Player player3(name);
-				if (plCt == 4) {
-					std::cout << "Please enter a name for player 4: ";
-					std::cin >> name;
-					Player player4(name);
-
-				}
-			}
-		}
+	for (int i = 1; i <= plCt; i++)
+	{
+		std::string x;
+		std::cout << "Please enter player " << i << "'s name.";
+		std::cin >> x;
+		name.push_back(Player(x));
 	}
-	
-	for (int i = 0; i < 60; i++) {
+
+	for (int i = 1; i <= plCt; i++) {
+
+		Player name[i];
 		
+
+		for (int i = 0; i<60; i++) {
+			name.addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
+		}
+
+		for (int i = 0; i<60; i++) {
+			name.addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
+		}
+
+		name.shuffleDeck();
+		for (int i = 0; i<60; i++) {
+			name.drawCard();                     // Draws the 60 cards from deck to hand.
+		}
+
+		name.displayHand();
 	}
 
 /*    Player tyler("Tyler");                    // Creates the player named Tyler

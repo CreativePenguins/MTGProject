@@ -40,6 +40,9 @@ Player::Player(std::string n) {
 void Player::addCardDeck(std::string card) {
     deck.push_back(card);
 }
+
+
+
 void Player::drawCard() {
     if (!deck.empty()) {
         hand.push_back(deck.back());
@@ -49,9 +52,14 @@ void Player::drawCard() {
         std::cout << "Your deck is empty...\n";
     }
 }
+
+
+
 void Player::shuffleDeck() {
     std::random_shuffle(deck.begin(), deck.end());
 }
+
+
 
 // Hand
 void Player::displayHand() {
