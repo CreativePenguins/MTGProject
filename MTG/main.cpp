@@ -14,8 +14,6 @@
 #include <vector>
 #include <string>
 
-std::vector<Player> name;
-
 int Game()
 {
 
@@ -25,26 +23,33 @@ int Game()
 
 int main() {
 
-	int plCt;
-	std::cout << "How many players do you have? ";
-	std::cin >> plCt;
+	std::vector<Player> name;
+	int plCt; // player count intializer
 
-	while (plCt > 4) 
+
+	std::cout << "How many players do you have? "; // asks player how many people are there
+	std::cin >> plCt; // inputs player count response
+
+	while (plCt > 6)  // while loop forces player to reinput number if it's above acceptable levels.
 	{
 		std::cout << "You have too many players,\nplease enter a value less than 6... ";
-		std::cin >> plCt;
+		std::cin >> plCt; //inputs the new response into player count
 	}
-	for (int i = 1; i <= plCt; i++)
+	for (int i = 1; i <= plCt; i++) // for loop increments a list containing string names.
 	{
-		std::string x;
-		std::cout << "Please enter player " << i << "'s name.";
-		std::cin >> x;
-		name.push_back(Player(x));
+		std::string x; //init string x
+		std::cout << "Please enter player " << i << "'s name."; //asks name input, calls i to reference which player.
+		std::cin >> x; // inputs string into x
+		name.push_back(Player(x)); //moves on to the next string in the player vector?
 	}
 
 	for (int i = 1; i <= plCt; i++) {
 
-		Player name;
+		std::vector<std::string>::iterator it;
+		it = name.begin(i); 
+		it != name.end(i);
+
+		Player name; //calls player name
 
 
 		for (int i = 0; i < 60; i++) {
@@ -61,6 +66,7 @@ int main() {
 		}
 
 		name.displayHand();
+
 	}
 }
 
@@ -86,13 +92,3 @@ int main() {
     }
     jay.displayHand();
 */    
-
-
-
-
-
-
-
-
-
-}
