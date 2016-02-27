@@ -6,8 +6,8 @@
 //  Copyright © 2016 JandT. All rights reserved.
 //
 
-#include "player.h"
-#include "Beginning.h"
+#include "player.h"		//Intializes player
+#include "Beginning.h"	//
 //#include ""
 
 #include <iostream>
@@ -29,7 +29,7 @@ int main() {
 	std::cout << "How many players do you have? ";
 	std::cin >> plCt;
 
-	while (plCt > 4)
+	while (plCt > 4) 
 	{
 		std::cout << "You have too many players,\nplease enter a value less than 6... ";
 		std::cin >> plCt;
