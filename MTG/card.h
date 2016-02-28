@@ -17,10 +17,11 @@ private:
 
     std::string name;                       // NAME
     std::vector <std::string> colour;       // Obviously color
-    std::map <std::string, int> Mana;       // Mana type with key and value
+    std::map <std::string, int> mana;       // Mana type with key and value
     std::string superType;                  // Card super type.
     std::string type;                       // Card sub-type
     std::map <std::string, int> counter;    // Modifications on card.
+    std::string keywords;
 
 public:
     // Default Constructor
@@ -34,12 +35,12 @@ public:
 	bool isFlip();          // Checks to see if card is flipped.
 	int getPower();         // Gets power level of card
 	int getToughness();     // Gets toughness level.
-    void getCounters();
-    void getColors();
-    void getMana();
+    std::string getCounters();
+    std::string getColors();
+    std::string getMana();
     std::string getSuperType();
     std::string getType();
-    void displayAllInformation();
+    std::string displayAllInformation();
 
 
     // Mutators

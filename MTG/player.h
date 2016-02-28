@@ -12,17 +12,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "card.h"
 
 
 class Player {
 private:
     std::string name;
     
-    std::vector<std::string> deck;     // Cards in library
-    std::vector<std::string> hand;     // Cards in hand
-    std::vector<std::string> exile;    // Cards in exile
-    std::vector<std::string> field;    // Cards on field
-    std::vector<std::string> cmdS;     // Card(s) in command slot
+    std::vector<Card> deck;     // Cards in library
+    std::vector<Card> hand;     // Cards in hand
+    std::vector<Card> exile;    // Cards in exile
+    std::vector<Card> field;    // Cards on field
+    std::vector<Card> cmdS;     // Card(s) in command slot
     
     std::vector<int> mana;             // Types of avail. mana
     

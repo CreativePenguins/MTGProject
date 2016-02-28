@@ -65,8 +65,8 @@ void Player::shuffleDeck() {
 void Player::displayHand() {
     if (!hand.empty()) {
         std::cout << name << "'s hand contains the following:\n";
-        for (std::vector<std::string>::iterator it = hand.begin(); it != hand.end(); it++)
-            std::cout << *it << "\n";
+        for (std::vector<Card>::iterator it = hand.begin(); it != hand.end(); it++)
+            std::cout << it->displayAllInformation() << "\n";
     }
     else
         std::cout << "Your hand is empty...\n";
