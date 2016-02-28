@@ -14,18 +14,18 @@
 #include <algorithm>
 #include <random>
 
-// Empty constructor
-
-Player::Player() {
-    name = "Player";
-    life = 20;
-    poison = 0;
-}
-
 // Filled constructor
 
 Player::Player(std::string n) {
     name = n;
+    life = 20;
+    poison = 0;
+}
+
+// Empty constructor
+
+Player::Player() {
+    name = "Player";
     life = 20;
     poison = 0;
 }
