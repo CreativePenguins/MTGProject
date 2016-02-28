@@ -7,7 +7,7 @@
 //
 
 #include "player.h"		//Intializes player
-#include "Beginning.h"	//
+#include "card.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -18,7 +18,6 @@ int main() {
 
 	std::vector<Player> name;
 	int plCt; // player count intializer
-
 
 	std::cout << "How many players do you have? "; // asks player how many people are there
 	std::cin >> plCt; // inputs player count response

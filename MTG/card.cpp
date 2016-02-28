@@ -1,9 +1,9 @@
 #include "card.h"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
 
 
-
-card::card()
-{
-}
-
-
+// Constructors
+// Empty

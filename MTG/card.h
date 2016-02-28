@@ -1,12 +1,12 @@
-#pragma once
-#ifndef player_h
-#define player_h
+#ifndef card_h
+#define card_h
+
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
-class card
-{
+class Card {
 private:
 	
 	bool tap;
@@ -15,31 +15,43 @@ private:
 	int power;
 	int toughness;
 
-	std::vector <std::string> colour;
-	std::vector <std::string> Mana;
-	std::vector <std::string> type;
-	std::vector <std::string> counter;
+    std::string name;                       // NAME
+    std::vector <std::string> colour;       // Obviously color
+    std::map <std::string, int> Mana;       // Mana type with key and value
+    std::string superType;                  // Card super type.
+    std::string type;                       // Card sub-type
+    std::map <std::string, int> counter;    // Modifications on card.
 
 public:
-	// Constructors
-	card();
+    // Default Constructor
+    Card();
+    //Filled Constructor
+    Card(std::string name);
 	
-	bool isTap();
-	bool isFlip();
+    // Getters
+    std::string getName();
+	bool isTap();           // Checks to see if card is tapped.
+	bool isFlip();          // Checks to see if card is flipped.
+	int getPower();         // Gets power level of card
+	int getToughness();     // Gets toughness level.
+    std::map<std::string, int> getCounters();
+    std::vector<std::string> getColors;
+    std::map<std::string, int> getMana();
+    std::string getSuperType();
+    std::string getType();
+    void displayAllInformation();
 
-	int getPower();
-	int getToughness();
 
+    // Setters
+    void setName();
 	void tapCard();
 	void flipCard();
 	void setPower(int x);
 	void setToughness(int x);
-	void addColour(std::string x);
-	void addMana();
-
-
-
-};
+    void addColour(std::string x);
+    void addMana(std::string x, int y);
+    void changeType(std::string x);
+    void changeSuperType(std::string x);};
 
 #endif
 
