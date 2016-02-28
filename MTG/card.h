@@ -28,22 +28,22 @@ public:
     //Filled Constructor
     Card(std::string name);
 	
-    // Getters
+    // Accessors
     std::string getName();
 	bool isTap();           // Checks to see if card is tapped.
 	bool isFlip();          // Checks to see if card is flipped.
 	int getPower();         // Gets power level of card
 	int getToughness();     // Gets toughness level.
-    std::map<std::string, int> getCounters();
-    std::vector<std::string> getColors;
-    std::map<std::string, int> getMana();
+    void getCounters();
+    void getColors();
+    void getMana();
     std::string getSuperType();
     std::string getType();
     void displayAllInformation();
 
 
-    // Setters
-    void setName();
+    // Mutators
+    void setName(std::string x);
 	void tapCard();
 	void flipCard();
 	void setPower(int x);
