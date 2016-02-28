@@ -23,7 +23,6 @@ private:
     std::vector<std::string> exile;    // Cards in exile
     std::vector<std::string> field;    // Cards on field
     std::vector<std::string> cmdS;     // Card(s) in command slot
-    std::vector<std::string> counter;  // Counters on cards
     
     std::vector<int> mana;             // Types of avail. mana
     
