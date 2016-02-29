@@ -66,7 +66,7 @@ void Player::displayHand() {
     if (!hand.empty()) {
         std::cout << name << "'s hand contains the following:\n";
         for (std::vector<Card>::iterator it = hand.begin(); it != hand.end(); it++)
-            std::cout << it->displayAllInformation() << "\n";
+            std::cout << it->getName() << "\n";
     }
     else
         std::cout << "Your hand is empty...\n";

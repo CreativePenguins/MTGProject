@@ -20,8 +20,8 @@ private:
     std::map <std::string, int> mana;       // Mana type with key and value
     std::string superType;                  // Card super type.
     std::string type;                       // Card sub-type
-    std::map <std::string, int> counter;    // Modifications on card.
-    std::string keywords;
+    std::map <std::string, int> counter;    // Modifications on card. Vector l8r
+    //std::string keywords;
 
 public:
     // Default Constructor
@@ -35,12 +35,12 @@ public:
 	bool isFlip();          // Checks to see if card is flipped.
 	int getPower();         // Gets power level of card
 	int getToughness();     // Gets toughness level.
-    std::string getCounters();
-    std::string getColors();
-    std::string getMana();
-    std::string getSuperType();
-    std::string getType();
-    std::string displayAllInformation();
+    //std::string getCounters();
+    void getColors();
+    void getMana();
+    void getSuperType();
+    void getType();
+    void displayAllInformation();
 
 
     // Mutators

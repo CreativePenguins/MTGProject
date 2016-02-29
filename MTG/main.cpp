@@ -58,12 +58,14 @@ int main() {
 		it->shuffleDeck();
         
 		for (int i = 0; i < 60; i++) {
-			it->drawCard();                     // Draws the 60 cards from deck to hand.		}
+			it->drawCard();                     // Draws the 60 cards from deck to hand.
+        }
 
 		it->displayHand();
 
 	}
 }
+
 
 
 
