@@ -13,6 +13,7 @@ Card::Card() {
     flip = NULL;
     power = NULL;
     toughness = NULL;
+	loyalty = NULL;
 }
 // Filled
 Card::Card(std::string x) {
@@ -34,6 +35,13 @@ int Card::getPower() {
 }
 int Card::getToughness() {
     return toughness;
+}
+int Card::getLoyalty() {
+	return loyalty;
+}
+std::string Card::getCounters(std::string counter) {
+
+	return counter;
 }
 void Card::getColors() {
     if (!colour.empty()) {
