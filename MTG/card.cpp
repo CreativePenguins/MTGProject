@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 
+
 // Constructors
 // Empty
 Card::Card() {
@@ -19,9 +20,7 @@ Card::Card(std::string x) {
     name = x;
 }
 
-/********************************
- Accessors
- ********************************/
+// Accessors
 std::string Card::getName() {
     return name;
 }
@@ -40,13 +39,9 @@ int Card::getToughness() {
 int Card::getLoyalty() {
 	return loyalty;
 }
-void Card::getCounters() {
-    if (!counter.empty()) {
-        std::cout << name << " has the counter(s):\n";
-        for (std::map<std::string, int>::iterator it = counter.begin(); it != counter.end(); it++)
-            std::cout << it->first << " => " << it->second << '\n';
-    } else
-        std::cout << "No counters...\n";
+std::string Card::getCounters(std::string counter) {
+
+	return counter;
 }
 void Card::getColors() {
     if (!colour.empty()) {
@@ -80,41 +75,4 @@ void Card::displayAllInformation() {
     Card::getToughness();
     Card::getColors();
     Card::getMana();
-}
-
-/********************************
- Mutators
- ********************************/
-void Card::setName(std::string name) {
-    this->name = name;
-}
-void Card::tapCard(bool x) {
-    this->tap = x;
-}
-void Card::flipCard(bool x) {
-    this->flip = x;
-}
-void Card::setPower(int x) {
-    this->power = x;
-}
-void Card::setToughness(int x) {
-    this->toughness = x;
-}
-void Card::addColour(std::string color) {
-    colour.push_back(color);
-}
-void Card::addMana(std::string color, int amt) {
-    mana.insert(std::pair<std::string, int>(color, amt));
-}
-void Card::addCounter(std::string type, int amt) {
-    counter.insert(std::pair<std:: string, int>(type, amt));
-}
-void Card::changeType(std::string type) {
-    this->type = type;
-}
-void Card::changeSuperType(std::string x) {
-    this->type = x;
-}
-void Card::setLoyalty(int x) {
-    this->loyalty = x;
 }
