@@ -45,9 +45,12 @@ void Card::getCounters() {
             std::cout << it->first << " => " << it->second << '\n';
     } else
         std::cout << "No counters...\n";
+<<<<<<< HEAD
 }
 std::string Card::getKeywords(std::string keytext) {
 	return keytext;
+=======
+>>>>>>> 616830c6e98c6cb41d71ccfb7327fa61022b749e
 }
 void Card::getColors() {
     if (!colour.empty()) {
@@ -119,5 +122,5 @@ void Card::changeSuperType(std::string x) {
     this->type = x;
 }
 void Card::setLoyalty(int x) {
-    this->loyalty = x;
+	this->loyalty = x;
 }
