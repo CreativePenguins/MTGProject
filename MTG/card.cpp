@@ -40,8 +40,10 @@ int Card::getLoyalty() {
 	return loyalty;
 }
 std::string Card::getCounters(std::string counter) {
-
 	return counter;
+}
+std::string Card::getKeywords(std::string keytext) {
+	return keytext;
 }
 void Card::getColors() {
     if (!colour.empty()) {
@@ -59,11 +61,11 @@ void Card::getMana() {
     } else
         std::cout << "No mana requirements...";
 }
-void Card::getSuperType() {
-    std::cout << name << " has the super type: " << superType << ".";
+std::string Card::getSuperType() {
+	return superType;
 }
-void Card::getType() {
-    std::cout << name << " has the sub type: " << type << ".";
+std::string Card::getType() {
+	return type;
 }
 void Card::displayAllInformation() {
     Card::getName();
@@ -71,6 +73,8 @@ void Card::displayAllInformation() {
     Card::isFlip();
     Card::getSuperType();
     Card::getType();
+	//Card::getCounters();
+	//Card::getKeywords();
     Card::getPower();
     Card::getToughness();
     Card::getColors();

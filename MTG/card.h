@@ -34,6 +34,8 @@ public:
     std::string getName();
 	std::string getCounters(std::string name);
 	std::string getKeywords(std::string Keyword);
+	std::string getSuperType();
+	std::string getType();
 	bool isTap();           // Checks to see if card is tapped.
 	bool isFlip();          // Checks to see if card is flipped.
 	int getPower();         // Gets power level of card
@@ -41,8 +43,6 @@ public:
 	int getLoyalty();
     void getColors();
     void getMana();
-    void getSuperType();
-    void getType();
     void displayAllInformation();
 
 
@@ -56,7 +56,7 @@ public:
     void addMana(std::string x, int y);
     void changeType(std::string x);
     void changeSuperType(std::string x);};
-	void setKeyword(std::string x);
+	void setKeywords(std::string x);
 	void setCounters(std::string x);
     void setLoyalty(int x);
 

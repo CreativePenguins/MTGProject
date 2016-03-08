@@ -71,3 +71,46 @@ void Player::displayHand() {
     else
         std::cout << "Your hand is empty...\n";
 }
+
+//Displays the players field and hand in a callable
+
+void Player::displayPlayerBoard() {
+	
+	/*
+	 * Change this later to make it *prettier*, meaning GUI.
+	 */
+
+	std::cout << "\t\t\t\t\t\t\t\t\t\t" << "|CS: " << cmdS.size() << "| \n";
+
+	int x = 0;
+	std::string land = "Land";
+
+	for (std::vector<Card>::iterator it = field.begin(); it != field.end(); it++){
+		if (it->getType() != land) {
+			std::cout << "|F" << x << ": " << it->getName() << "|\t";
+			x++;
+		}
+	}
+
+	std::cout << "\n";
+	x = 0;
+
+	for (std::vector<Card>::iterator it = field.begin(); it != field.end(); it++) {
+		if (it->getType() == land) {
+			std::cout << "|L" << x << ": " << it->getName() << "|\t";
+			x++;
+		}
+	}
+
+	std::cout << "\n____________________________________________ \n";
+	x = 0;
+
+		std::cout <<"\t\t\t\t\t\t\t\t\t\t |D: "<< deck.size() << "| |G:	" << grave.size() << "| |E: " << exile.size() << "|\n" ;
+
+	for (std::vector<Card>::iterator it = hand.begin(); it != hand.end(); it++){
+		std::cout << "|H" << x << ": " << it->getName() << "|\t";
+		x++;
+	}
+
+
+}

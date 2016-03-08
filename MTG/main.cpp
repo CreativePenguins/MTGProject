@@ -50,7 +50,6 @@ int main() {
 
     for (std::vector<Player>::iterator it = name.begin(); it != name.end(); it++) {
 
-
 		for (int i = 0; i < 60; i++) {
 			it->addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
 		}
@@ -63,6 +62,11 @@ int main() {
 
 		it->displayHand();
 
+	}
+	for (std::vector<Player>::iterator it = name.begin(); it != name.end(); it++) {
+
+
+		
 	}
 }
 
