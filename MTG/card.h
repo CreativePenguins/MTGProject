@@ -22,8 +22,6 @@ private:
 	std::string name;                       // NAME
 	std::string superType;                  // Card super type.
     std::string type;                       // Card sub-type
-    std::string Keyword;
-
 public:
     // Default Constructor
     Card();
@@ -32,7 +30,7 @@ public:
 	
     // Accessors
     std::string getName();
-	std::string getCounters(std::string name);
+    void getCounters();
 	std::string getKeywords(std::string Keyword);
 	std::string getSuperType();
 	std::string getType();
@@ -48,17 +46,17 @@ public:
 
     // Mutators
     void setName(std::string x);
-	void tapCard();
-	void flipCard();
+	void tapCard(bool x);
+	void flipCard(bool x);
 	void setPower(int x);
 	void setToughness(int x);
     void addColour(std::string x);
     void addMana(std::string x, int y);
+    void addCounter(std::string, int);
     void changeType(std::string x);
-    void changeSuperType(std::string x);};
-	void setKeywords(std::string x);
-	void setCounters(std::string x);
+    void changeSuperType(std::string x);
     void setLoyalty(int x);
+};
 
 #endif
 
