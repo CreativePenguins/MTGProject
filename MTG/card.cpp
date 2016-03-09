@@ -4,6 +4,8 @@
 #include <vector>
 #include <map>
 
+using namespace::std;
+
 // Constructors
 // Empty
 Card::Card() {
@@ -15,12 +17,12 @@ Card::Card() {
 	loyalty = NULL;
 }
 // Filled
-Card::Card(std::string x) {
+Card::Card(string x) {
     name = x;
 }
 
 // Accessors
-std::string Card::getName() {
+string Card::getName() {
     return name;
 }
 bool Card::isTap() {
@@ -40,32 +42,32 @@ int Card::getLoyalty() {
 }
 void Card::getCounters() {
     if (!counter.empty()) {
-        std::cout << name << " has the counter(s):\n";
-        for (std::map<std::string, int>::iterator it = counter.begin(); it != counter.end(); it++)
-            std::cout << it->first << " => " << it->second << '\n';
+        cout << name << " has the counter(s):\n";
+        for (map<string, int>::iterator it = counter.begin(); it != counter.end(); it++)
+            cout << it->first << " => " << it->second << '\n';
     } else
-        std::cout << "No counters...\n";
+        cout << "No counters...\n";
 }
 void Card::getColors() {
     if (!colour.empty()) {
-        std::cout << name << " has the color(s):\n";
-        for (std::vector<std::string>::iterator it = colour.begin(); it != colour.end(); it++)
-            std::cout << *it << "\n";
+        cout << name << " has the color(s):\n";
+        for (vector<string>::iterator it = colour.begin(); it != colour.end(); it++)
+            cout << *it << "\n";
     } else
-        std::cout << "No colors...\n";
+        cout << "No colors...\n";
 }
 void Card::getMana() {
     if (!mana.empty()) {
-        std::cout << name << " has the following mana costs:\n";
-        for (std::map<std::string, int>::iterator it = mana.begin(); it != mana.end(); it++)
-            std::cout << it->first << it->second << "\n";
+        cout << name << " has the following mana costs:\n";
+        for (map<string, int>::iterator it = mana.begin(); it != mana.end(); it++)
+            cout << it->first << it->second << "\n";
     } else
-        std::cout << "No mana requirements...";
+        cout << "No mana requirements...";
 }
-std::string Card::getSuperType() {
+string Card::getSuperType() {
 	return superType;
 }
-std::string Card::getType() {
+string Card::getType() {
 	return type;
 }
 void Card::displayAllInformation() {
@@ -85,7 +87,7 @@ void Card::displayAllInformation() {
 /********************************
  Mutators
  ********************************/
-void Card::setName(std::string name) {
+void Card::setName(string name) {
     this->name = name;
 }
 void Card::tapCard(bool x) {
@@ -100,19 +102,19 @@ void Card::setPower(int x) {
 void Card::setToughness(int x) {
     this->toughness = x;
 }
-void Card::addColour(std::string color) {
+void Card::addColour(string color) {
     colour.push_back(color);
 }
-void Card::addMana(std::string color, int amt) {
-    mana.insert(std::pair<std::string, int>(color, amt));
+void Card::addMana(string color, int amt) {
+    mana.insert(pair<string, int>(color, amt));
 }
-void Card::addCounter(std::string type, int amt) {
-    counter.insert(std::pair<std:: string, int>(type, amt));
+void Card::addCounter(string type, int amt) {
+    counter.insert(pair< string, int>(type, amt));
 }
-void Card::changeType(std::string type) {
+void Card::changeType(string type) {
     this->type = type;
 }
-void Card::changeSuperType(std::string x) {
+void Card::changeSuperType(string x) {
     this->type = x;
 }
 void Card::setLoyalty(int x) {
