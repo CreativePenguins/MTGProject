@@ -74,6 +74,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.sln
 *.ipch
 
 # User-specific files (MonoDevelop/Xamarin Studio)

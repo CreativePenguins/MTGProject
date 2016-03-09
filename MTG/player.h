@@ -9,10 +9,10 @@
 #ifndef player_h
 #define player_h
 
+#include "card.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include "card.h"
 #include <map>
 
 

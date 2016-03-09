@@ -7,6 +7,7 @@
 //
 
 #include "player.h"		//Intializes player
+#include "game.h"
 #include "card.h"
 #include <iostream>
 #include <vector>
@@ -15,58 +16,37 @@
 
 
 int main() {
+	game game;
+	int x = 0;
 
-	std::vector<Player> name;
-	int plCt; // player count intializer
+	std::cout << "Welcome to Frameworks Pre-Alpha";
+	std::cout << "Please select one of the following options:	\n";
+	std::cout << "To start a game, type 1 \n";
+	std::cout << "To build a deck, type 2 \n";
+	std::cout << "To edit your profile, type 3 \n";
+	std::cout << "To change your settings, type 4 \n";
+	std::cout << "To exit, type 5 \n";
 
-	std::cout << "How many players do you have? "; // asks player how many people are there
-	std::cin >> plCt; // inputs player count response
+	std::cin >> x;
 
-    while (std::cin.fail()) {
-        std::cout << "Please enter a valid number!\n";
-        std::cin.clear();
-        std::cin.ignore(256,'\n');
-        std::cin >> plCt;
-    }
-    
-	while (plCt > 6 || plCt < 2)  // while loop forces player to reinput number if it's above acceptable levels.
-	{
-		std::cout << "You have too many or not enough players,\nplease enter a value between 2 and 6... ";
-		std::cin >> plCt; //inputs the new response into player count
-        while (std::cin.fail()) {
-            std::cout << "Please enter a valid number!\n";
-            std::cin.clear();
-            std::cin.ignore(256,'\n');
-            std::cin >> plCt;
-        }
+	while (x < 1 || x > 5) {				// Goes through input until it's a valid selection
+		std::cout << "That is not a valid selection, please enter a valid selection\n";
+		std::cin >> x;
 	}
-	for (int i = 1; i <= plCt; i++) // for loop increments a list containing string names.
-	{
-		std::cout << "Please enter player " << i << "'s name: "; //asks name input, calls i to reference which player.
-        std::string x;
-        std::cin >> x; // inputs string into x
-		name.push_back(Player(x)); //moves on to the next string in the player vector?
-	}
-
-    for (std::vector<Player>::iterator it = name.begin(); it != name.end(); it++) {
-
-		for (int i = 0; i < 60; i++) {
-			it->addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
-		}
-
-		it->shuffleDeck();
-        
-		for (int i = 0; i < 60; i++) {
-			it->drawCard();                     // Draws the 60 cards from deck to hand.
-        }
-
-		it->displayHand();
-
-	}
-	for (std::vector<Player>::iterator it = name.begin(); it != name.end(); it++) {
-
-
-		
+	
+	switch (x) {
+	case 1:
+		game.regular();
+	case 2:
+		std::cout << "Unimplemented"; // placeholder
+	case 3:
+		std::cout << "Unimplemented"; // placeholder
+	case 4:
+		std::cout << "Unimplemented"; // placeholder
+	case 5:
+		return 0;
+	default:
+		std::cout << "That is not a valid selection\n";
 	}
 }
 
