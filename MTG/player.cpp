@@ -14,11 +14,9 @@
 #include <algorithm>
 #include <random>
 
-using namespace::std;
-
 // Filled constructor
 
-Player::Player(string n) {
+Player::Player(std::string n) {
     name = n;
     life = 20;
     poison = 0;
@@ -39,7 +37,7 @@ Player::Player() {
 
 // Accessors and mutators
 // Library (Deck)
-void Player::addCardDeck(string card) {
+void Player::addCardDeck(std::string card) {
     deck.push_back(card);
 }
 
@@ -51,14 +49,14 @@ void Player::drawCard() {
         deck.pop_back();
     }
     else {
-        cout << "Your deck is empty...\n";
+        std::cout << "Your deck is empty...\n";
     }
 }
 
 
 
 void Player::shuffleDeck() {
-    random_shuffle(deck.begin(), deck.end());
+    std::random_shuffle(deck.begin(), deck.end());
 }
 
 
@@ -66,12 +64,12 @@ void Player::shuffleDeck() {
 // Hand
 void Player::displayHand() {
     if (!hand.empty()) {
-        cout << name << "'s hand contains the following:\n";
-        for (vector<Card>::iterator it = hand.begin(); it != hand.end(); it++)
-            cout << it->getName() << "\n";
+        std::cout << name << "'s hand contains the following:\n";
+        for (std::vector<Card>::iterator it = hand.begin(); it != hand.end(); it++)
+            std::cout << it->getName() << "\n";
     }
     else
-        cout << "Your hand is empty...\n";
+        std::cout << "Your hand is empty...\n";
 }
 
 //Displays the players field and hand in a callable
@@ -82,35 +80,35 @@ void Player::displayPlayerBoard() {
 	 * Change this later to make it *prettier*, meaning GUI.
 	 */
 
-	cout << "\t\t\t\t\t\t\t\t\t\t" << "|CS: " << cmdS.size() << "| \n";
+	std::cout << "\t\t\t\t\t\t\t\t\t\t" << "|CS: " << cmdS.size() << "| \n";
 
 	int x = 0;
-	string land = "Land";
+	std::string land = "Land";
 
-	for (vector<Card>::iterator it = field.begin(); it != field.end(); it++){
+	for (std::vector<Card>::iterator it = field.begin(); it != field.end(); it++){
 		if (it->getType() != land) {
-			cout << "|F" << x << ": " << it->getName() << "|\t";
+			std::cout << "|F" << x << ": " << it->getName() << "|\t";
 			x++;
 		}
 	}
 
-	cout << "\n";
+	std::cout << "\n";
 	x = 0;
 
-	for (vector<Card>::iterator it = field.begin(); it != field.end(); it++) {
+	for (std::vector<Card>::iterator it = field.begin(); it != field.end(); it++) {
 		if (it->getType() == land) {
-			cout << "|L" << x << ": " << it->getName() << "|\t";
+			std::cout << "|L" << x << ": " << it->getName() << "|\t";
 			x++;
 		}
 	}
 
-	cout << "\n____________________________________________ \n";
+	std::cout << "\n____________________________________________ \n";
 	x = 0;
 
-		cout <<"\t\t\t\t\t\t\t\t\t\t |D: "<< deck.size() << "| |G:	" << grave.size() << "| |E: " << exile.size() << "|\n" ;
+		std::cout <<"\t\t\t\t\t\t\t\t\t\t |D: "<< deck.size() << "| |G:	" << grave.size() << "| |E: " << exile.size() << "|\n" ;
 
-	for (vector<Card>::iterator it = hand.begin(); it != hand.end(); it++){
-		cout << "|H" << x << ": " << it->getName() << "|\t";
+	for (std::vector<Card>::iterator it = hand.begin(); it != hand.end(); it++){
+		std::cout << "|H" << x << ": " << it->getName() << "|\t";
 		x++;
 	}
 

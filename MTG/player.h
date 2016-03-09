@@ -15,20 +15,19 @@
 #include "card.h"
 #include <map>
 
-using namespace::std;
 
 class Player {
 private:
-    string name;
+    std::string name;
     
-    vector<Card> deck;     // Cards in library
-	vector<Card> grave;     // Cards in library
-    vector<Card> hand;     // Cards in hand
-    vector<Card> exile;    // Cards in exile
-    vector<Card> field;    // Cards on field
-    vector<Card> cmdS;     // Card(s) in command slot
+    std::vector<Card> deck;     // Cards in library
+	std::vector<Card> grave;     // Cards in library
+    std::vector<Card> hand;     // Cards in hand
+    std::vector<Card> exile;    // Cards in exile
+    std::vector<Card> field;    // Cards on field
+    std::vector<Card> cmdS;     // Card(s) in command slot
     
-    map<string,int> mana;      // Types of avail. mana
+    std::map<std::string,int> mana;      // Types of avail. mana
     
     int life;                   // Life counter
     int poison;                 // Poison counter
@@ -36,14 +35,14 @@ private:
 public:
     // Constructors
     Player();
-    Player(string n);
+    Player(std::string n);
     
     // Deconstructor
     //~Player();
     
     // Accessors and mutators
     // Library(Deck)
-    void addCardDeck(string card);
+    void addCardDeck(std::string card);
     void drawCard();
     void shuffleDeck();
 	void boardInit();
