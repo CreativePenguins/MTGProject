@@ -10,8 +10,6 @@
 #include <string>
 #include <iostream>
 
-using namespace::std;
-
 /*****************************
  Constructors
  *****************************/
@@ -20,7 +18,7 @@ Counter::Counter(){
     effectType = "NULL";
     desc = "NULL";
 }
-Counter::Counter(int num, string type, string desc){
+Counter::Counter(int num, std::string type, std::string desc){
     effectNum = num;
     effectType = type;
     this->desc = desc;
@@ -33,10 +31,10 @@ Counter::Counter(int num, string type, string desc){
 int Counter::getEffNum(){
     return effectNum;
 }
-string Counter::getEffType(){
+std::string Counter::getEffType(){
     return effectType;
 }
-string Counter::getDesc(){
+std::string Counter::getDesc(){
     return desc;
 }
 
@@ -46,9 +44,9 @@ string Counter::getDesc(){
 void Counter::setEffNum(int x){
     effectNum = x;
 }
-void Counter::setEffType(string x){
+void Counter::setEffType(std::string x){
     effectType = x;
 }
-void Counter::setDesc(string x){
+void Counter::setDesc(std::string x){
     desc = x;
 }

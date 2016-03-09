@@ -37,16 +37,22 @@ int main() {
 	switch (x) {
 	case 1:
 		game.regular();
+            break;
 	case 2:
-		std::cout << "Unimplemented"; // placeholder
+		std::cout << "Unimplemented\n"; // placeholder
+            break;
 	case 3:
-		std::cout << "Unimplemented"; // placeholder
+		std::cout << "Unimplemented\n"; // placeholder
+            break;
 	case 4:
-		std::cout << "Unimplemented"; // placeholder
+		std::cout << "Unimplemented\n"; // placeholder
+            break;
 	case 5:
 		return 0;
+            break;
 	default:
 		std::cout << "That is not a valid selection\n";
+            break;
 	}
 }
 
