@@ -16,22 +16,45 @@
 
 
 int main() {
+    
 	game game;
 	int x = 0;
 
-	std::cout << "Welcome to Frameworks Pre-Alpha";
-	std::cout << "Please select one of the following options:	\n";
-	std::cout << "To start a game, type 1 \n";
-	std::cout << "To build a deck, type 2 \n";
-	std::cout << "To edit your profile, type 3 \n";
-	std::cout << "To change your settings, type 4 \n";
-	std::cout << "To exit, type 5 \n";
+    std::cout << __DATE__ << std::endl;
+    std::cout << "Welcome to Frameworks Pre-Alpha\n";
+	std::cout << "Please select one of the following options:\n";
+	std::cout << "\tTo start a game, type 1\n";
+	std::cout << "\tTo build a deck, type 2\n";
+	std::cout << "\tTo edit your profile, type 3\n";
+	std::cout << "\tTo change your settings, type 4\n";
+	std::cout << "\tTo exit, type 5\n";
 
 	std::cin >> x;
+    
+    /***
+     Checks 'x' to make sure it's a valid int.
+     ***/
+    
+    while (std::cin.fail()) {
+        std::cout << "Please enter a valid number!\n";
+        std::cin.clear();
+        std::cin.ignore(256, '\n');
+        std::cin >> x;
+    }
 
-	while (x < 1 || x > 5) {				// Goes through input until it's a valid selection
-		std::cout << "That is not a valid selection, please enter a valid selection\n";
+    /***
+     Checks input to make sure that 'x' is a valid selection
+     ***/
+    
+	while (x < 1 || x > 5) {
+		std::cout << x << " is not a valid selection, please enter a value 1-5\n";
 		std::cin >> x;
+        while (std::cin.fail()) {
+            std::cout << "Please enter a valid number!\n";
+            std::cin.clear();
+            std::cin.ignore(256, '\n');
+            std::cin >> x;
+        }
 	}
 	
 	switch (x) {
@@ -55,35 +78,3 @@ int main() {
             break;
 	}
 }
-
-
-
-
-/*    Player tyler("Tyler");                    // Creates the player named Tyler
-    for (int i = 0; i<60; i++) {
-        tyler.addCardDeck(std::to_string(i)); // Will create cards from 0 to 59 to put in deck.
-    }
-    tyler.shuffleDeck();
-    for (int i = 0; i<60; i++) {
-        tyler.drawCard();                     // Draws the 60 cards from deck to hand.
-    }
-    tyler.displayHand();                      // Displays the hand of the player.
-    
-    Player jay("Jay");
-    for (int i = 0; i<60; i++) {
-        jay.addCardDeck(std::to_string(i));   // See notes above.
-    }
-    jay.shuffleDeck();
-    for (int i = 0; i<60; i++) {
-        jay.drawCard();
-    }
-    jay.displayHand();
-*/
-/*
- int Game()
- {
- 
-	Beginning Bo;
- 
- }
- */
