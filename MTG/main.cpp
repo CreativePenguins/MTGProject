@@ -22,6 +22,7 @@ int main() {
 
     std::cout << __DATE__ << std::endl;
     std::cout << "Welcome to Frameworks Pre-Alpha\n";
+    std::cout << "*********************************************\n";
 	std::cout << "Please select one of the following options:\n";
 	std::cout << "\tTo start a game, type 1\n";
 	std::cout << "\tTo build a deck, type 2\n";
