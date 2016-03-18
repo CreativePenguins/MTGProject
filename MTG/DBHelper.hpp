@@ -11,12 +11,20 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include <sqlite3.h>
 
 class Connection{
+private:
+    sqlite3 *db;
+    sqlite3_stmt *res;
+    
+    const char *errMSG;
+    const char *tail;
+    int error = sqlite3_open("Cards.db", &db);
+    
 public:
-    void getConnection() {
-    }
+    
 };
 
 #endif /* DBHelper_hpp */
