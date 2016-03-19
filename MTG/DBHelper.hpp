@@ -9,22 +9,27 @@
 #ifndef DBHelper_hpp
 #define DBHelper_hpp
 
-#include <stdio.h>
 #include <iostream>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include <sqlite3.h>
 
-class Connection{
+class DBHelper{
 private:
     sqlite3 *db;
-    sqlite3_stmt *res;
-    
-    const char *errMSG;
-    const char *tail;
-    int error = sqlite3_open("Cards.db", &db);
+    char * zErrMsg = 0;
+    int rc;
+    char *sql;
+    const char* data = "Callback funciton called";
+    char *location;
     
 public:
-    
+    void setDBLocation(char *database);
+    void openConnection();
+    void setSQLStatment(char *stmt);
+    void execSQL();
+    static int callback(void *data, int argc, char **argv, char **azColName);
+    void closeSQL();
 };
 
 #endif /* DBHelper_hpp */

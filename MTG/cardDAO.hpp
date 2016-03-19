@@ -14,5 +14,9 @@
 #include <stdlib.h>
 #include <sqlite3.h>
 
+class CardDAO {
+ 
+};
+
 
 #endif /* cardDAO_hpp */
