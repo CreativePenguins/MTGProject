@@ -23,7 +23,7 @@ int main() {
     DBHelper connection;
     
     connection.setDBLocation("/Users/Tyler/Dropbox/Documents/Code/MTGProject/Database/Cards.db");
-    connection.setSQLStatment("Select * from Cards where id='2'");
+    connection.setSQLStatment("Select * from Cards where color='R'");
     connection.execSQL();
     
 	game game;

@@ -23,12 +23,13 @@ private:
     const char* data = "Callback funciton called";
     char *location;
     
+    static int callback(void *data, int argc, char **argv, char **azColName);
+    
 public:
     void setDBLocation(char *database);
     void openConnection();
     void setSQLStatment(char *stmt);
     void execSQL();
-    static int callback(void *data, int argc, char **argv, char **azColName);
     void closeSQL();
 };
 
