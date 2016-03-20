@@ -16,14 +16,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <sqlite3.h>
-
 int main() {
     
     DBHelper connection;
     
     connection.setDBLocation("/Users/Tyler/Dropbox/Documents/Code/MTGProject/Database/Cards.db");
-    connection.setSQLStatment("Select * from Cards where color='R'");
+    connection.setSQLStatment("Select name from Cards where color='GR'");
     connection.execSQL();
     
 	game game;
